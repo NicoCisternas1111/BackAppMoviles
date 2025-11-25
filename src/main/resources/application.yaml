@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: shozoko-api
+  datasource:
+    url: jdbc:mysql://localhost:3306/shozoko_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Santiago
+    username: root
+    password: Admin123!
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # luego podemos cambiar a 'validate' o usar Flyway
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
