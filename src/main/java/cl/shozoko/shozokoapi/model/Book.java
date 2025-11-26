@@ -1,6 +1,11 @@
 package cl.shozoko.shozokoapi.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 
@@ -32,6 +37,9 @@ public class Book {
     @Column(nullable = false)
     private Integer stock;
 
+    @Column(name = "cover_uri")
+    private String coverUri;
+
     // ===== Constructores =====
     public Book() {
     }
@@ -49,6 +57,15 @@ public class Book {
     public Long getId() {
         return id;
     }
+
+    public String getCoverUri() {
+        return coverUri;
+    }
+
+    public void setCoverUri(String coverUri) {
+        this.coverUri = coverUri;
+    }
+
 
     // no ponemos setId, lo maneja JPA
 

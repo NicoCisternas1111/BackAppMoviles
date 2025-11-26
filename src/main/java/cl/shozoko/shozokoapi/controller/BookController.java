@@ -54,6 +54,7 @@ public class BookController {
                 request.getPrice(),
                 request.getStock()
         );
+        book.setCoverUri(request.getCoverUri());
         Book saved = bookRepository.save(book);
         return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
@@ -75,6 +76,7 @@ public class BookController {
         existing.setCategory(request.getCategory());
         existing.setPrice(request.getPrice());
         existing.setStock(request.getStock());
+        existing.setCoverUri(request.getCoverUri()); 
 
         Book saved = bookRepository.save(existing);
         return ResponseEntity.ok(saved);

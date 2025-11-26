@@ -20,6 +20,8 @@ public class BookRequest {
     @Min(value = 0, message = "El stock debe ser mayor o igual a 0")
     private Integer stock;
 
+    private String coverUri;
+
     public BookRequest() {
     }
 
@@ -49,5 +51,9 @@ public class BookRequest {
 
     public Integer getStock() {
         return stock;
+    }
+
+    public String getCoverUri(){
+        return coverUri;
     }
 }
